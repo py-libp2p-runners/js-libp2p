@@ -15,7 +15,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, x64]
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
@@ -27,7 +27,7 @@ jobs:
 
   check:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, x64]
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
@@ -48,7 +48,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [windows-latest, ubuntu-latest, macos-latest]
+        os: [windows-latest, [self-hosted, linux, x64], macos-latest]
         node: [lts/*]
       fail-fast: false
     steps:
@@ -68,7 +68,7 @@ jobs:
 
   test-chrome:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, x64]
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
@@ -86,7 +86,7 @@ jobs:
 
   test-chrome-webworker:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, x64]
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
@@ -104,7 +104,7 @@ jobs:
 
   test-firefox:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, x64]
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
@@ -122,7 +122,7 @@ jobs:
 
   test-firefox-webworker:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, x64]
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
@@ -140,7 +140,7 @@ jobs:
 
   test-webkit:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, x64]
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
@@ -163,7 +163,7 @@ jobs:
 
   test-electron-main:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, x64]
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
@@ -181,7 +181,7 @@ jobs:
 
   test-electron-renderer:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, x64]
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
@@ -199,7 +199,7 @@ jobs:
 
   test-interop:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, x64]
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
@@ -212,7 +212,7 @@ jobs:
 
   # transport-interop:
   #   needs: build
-  #   runs-on: ubuntu-latest
+  #   runs-on: [self-hosted, linux, x64]
   #   steps:
   #     - name: Free Disk Space
   #       uses: jlumbroso/free-disk-space@54081f138730dfa15788a46383842cd2f914a1be # v1.3.1
@@ -245,7 +245,7 @@ jobs:
   #         worker-count: 16
 
   release:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, x64]
     needs: [
         test-node,
         test-chrome,
