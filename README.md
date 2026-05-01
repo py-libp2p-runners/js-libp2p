@@ -2,7 +2,7 @@
   <a href="https://libp2p.io"><img width="250" src="https://github.com/libp2p/js-libp2p/blob/main/img/libp2p.png?raw=true" alt="libp2p hex logo" /></a>
 </h1>
 
-<h3 align="center">The JavaScript implementation of the libp2p Networking Stack</h3>
+<h3 align="center">The JavaScript implementation of the libp2p Networking Stack forked for testing</h3>
 
 [![libp2p.io](https://img.shields.io/badge/project-libp2p-yellow.svg?style=flat-square)](http://libp2p.io/)
 [![npm](https://img.shields.io/npm/dm/libp2p.svg?style=flat-square)](https://www.npmjs.com/package/libp2p)
